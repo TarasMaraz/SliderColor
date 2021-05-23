@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    @IBOutlet var alphaSlider: UISlider!
     
     @IBOutlet var redValue: UILabel!
     @IBOutlet var greenValue: UILabel!
@@ -47,12 +48,17 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func slidedAlpha(_ sender: Any) {
+        chengePalitra()
+    }
+    
+    
     func chengePalitra() {
         palitra.backgroundColor = UIColor(
             displayP3Red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
-            alpha: 1)
+            alpha: CGFloat(alphaSlider.value))
     }
     
     
@@ -62,10 +68,12 @@ class ViewController: UIViewController {
         redSlider.value = 0
         greenSlider.value = 0
         blueSlider.value = 0
+        alphaSlider.value = 1
         
         slidedRed(0)
         slidedBlue(0)
         slidedGreen(0)
+    
         
         chengePalitra()
     }
