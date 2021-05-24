@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        palitra.layer.cornerRadius = 15
         redValue.text = "0.50"
         greenValue.text = "0.50"
         blueVlue.text = "0.50"
@@ -36,12 +37,10 @@ class ViewController: UIViewController {
         redValue.text = String(format: "%.2f", redSlider.value)
         chengePalitra()
     }
-    
     @IBAction func slidedGreen(_ sender: Any) {
         greenValue.text = String(format: "%.2f", greenSlider.value)
         chengePalitra()
     }
-    
     @IBAction func slidedBlue(_ sender: Any) {
         blueVlue.text = String(format: "%.2f", blueSlider.value)
         chengePalitra()
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
     
     func chengePalitra() {
         palitra.backgroundColor = UIColor(
-            displayP3Red: CGFloat(redSlider.value),
+            red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: CGFloat(alphaSlider.value))
