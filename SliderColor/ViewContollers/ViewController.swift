@@ -112,6 +112,7 @@ extension ViewController {
                                             target: nil,
                                             action: nil)
         keyboardToolbar.items = [flexBarButton, doneButton]
+        chengePalitra()
     }
     
     @objc private func didTapDone() {
